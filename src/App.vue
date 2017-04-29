@@ -3,15 +3,13 @@
     <div class="container">
       <div class="row">
 
-        <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <Sidebar></Sidebar>
-              </div>-->
 
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <Navbar></Navbar>
           <Card></Card>
           <mirList></mirList>
           <confGen></confGen>
+          <p>about us</p>
         </div>
 
       </div>
@@ -20,7 +18,6 @@
 </template>
 
 <script>
-  // import 'bootstrap/dist/css/bootstrap.min.css';
   import 'bootflat/css/bootstrap.min.css';
   import Card from './components/Card';
   import Navbar from './components/Navbar';
