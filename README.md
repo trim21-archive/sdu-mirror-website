@@ -5,8 +5,13 @@
 基于vue2+bootstrap
 
 开发：
-`git clone url
+`
+git clone url
+
 cd sdu-mirror-website
+
 npm i
-npm run dev`
+
+npm run dev
+`
 山大网络安全俱乐部
