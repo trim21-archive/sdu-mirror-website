@@ -4,6 +4,8 @@
 
 基于vue2+bootstrap
 
+demo [http://se.trim21.cn](http://se.trim21.cn)
+
 开发：
 ```
 git clone url

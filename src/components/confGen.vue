@@ -22,6 +22,9 @@
     </div>
     <br>
     <pre>{{ gen(distro,version) }}</pre>
+    <h2>使用说明</h2>
+    <div></div>
+    <h3>{{user(distro)}}</h3>
   </div>
 </template>
 
@@ -29,6 +32,14 @@
   export default {
     name: 'confGen',
     methods: {
+      user(dist) {
+        if (dist === 'npm') {
+          return '加入#~/.npmrc';
+        } else if (dist === 'ubuntu' || dist === 'kali') {
+          return '替换/etc/apt/sources.list';
+        }
+        return dist;
+      },
       getVersionOfDistro(distro) {
         if (distro === 'npm') {
           return [{
@@ -106,8 +117,8 @@ deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-updates main restricted univ
 # deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-proposed main restricted universe multiverse`;
         } else if (this.distro === 'npm') {
           st = `#~/.npmrc
-          
-registry=http://npmreg.mirrors.ustc.edu.cn/`;
+
+registry=http://mirror.sdu.edu.cn/npm/`;
         }
         return st;
       },
