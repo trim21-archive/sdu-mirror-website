@@ -5,50 +5,118 @@
       <div class="row">
 
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <select v-model="selected" class="form-control">
-               <option value="artful">artful (17.10)</option>
-               <option value="zesty">zesty (17.04)</option>
-               <option value="yakkety">yakkety (16.10)</option>
-               <option value="xenial">xenial (16.04)</option>
-               <option  value="wily">wily (15.10)</option>
-               <option  value="vivid">vivid (15.04)</option>
-               <option  value="utopic">utopic (14.10)</option>
-               <option value="trusty">trusty (14.04)</option>
-               <option value="saucy">saucy (13.10)</option>
-               <option value="raring">raring (13.04)</option>
-               <option value="quantal">quantal (12.10)</option>
-               <option value="precise">precise (12.04)</option>
+          <select v-model="distro" class="form-control">
+               <option version="ubuntu">ubuntu</option>
+               <option version="kali">kali</option>
+               <option version="npm">npm</option>
             </select>
-          <!--<span>Selected: {{ selected | capitalize }}</span>-->
         </div>
+
+        <div v-if="getVersionOfDistro(distro).length>1" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <select v-model="version" class="form-control">
+            <option v-if="getVersionOfDistro(distro)" v-for="item in getVersionOfDistro(distro)" :value="item.key">{{item.name}}</option>
+            </select>
+        </div>
+
       </div>
     </div>
     <br>
-    <pre>{{ selected | capitalize }}</pre>
+    <pre>{{ gen(distro,version) }}</pre>
   </div>
 </template>
 
 <script>
   export default {
     name: 'confGen',
-    filters: {
-      capitalize: function a(value) {
-        if (!value) return '';
-        const st = `deb http://mirror.sdu.edu.cn/ubuntu/ ${value} main restricted universe multiverse
-deb http://mirror.sdu.edu.cn/ubuntu/ ${value}-security main restricted universe multiverse
-deb http://mirror.sdu.edu.cn/ubuntu/ ${value}-updates main restricted universe multiverse
-# deb http://mirror.sdu.edu.cn/ubuntu/ ${value}-proposed main restricted universe multiverse
-# deb http://mirror.sdu.edu.cn/ubuntu/ ${value}-backports main restricted universe multiverse
-deb-src http://mirror.sdu.edu.cn/ubuntu/ ${value} main restricted universe multiverse
-deb-src http://mirror.sdu.edu.cn/ubuntu/ ${value}-security main restricted universe multiverse
-deb-src http://mirror.sdu.edu.cn/ubuntu/ ${value}-updates main restricted universe multiverse
-# deb-src http://mirror.sdu.edu.cn/ubuntu/ ${value}-proposed main restricted universe multiverse`;
+    methods: {
+      getVersionOfDistro(distro) {
+        if (distro === 'npm') {
+          return [{
+            key: 'npm',
+            name: 'npm',
+          }];
+        } else if (distro === 'ubuntu') {
+          return [{
+            key: 'artful',
+            name: 'artful (17.10)',
+          }, {
+            key: 'zesty',
+            name: 'zesty (17.04)',
+          }, {
+            key: 'yakkety',
+            name: 'yakkety (16.10)',
+          }, {
+            key: 'xenial',
+            name: 'xenial (16.04)',
+          }, {
+            key: 'wily',
+            name: 'wily (15.10)',
+          }, {
+            key: 'vivid',
+            name: 'vivid (15.04)',
+          }, {
+            key: 'utopic',
+            name: 'utopic (14.10)',
+          }, {
+            key: 'trusty',
+            name: 'trusty (14.04)',
+          }, {
+            key: 'saucy',
+            name: 'raring (13.10)',
+          }, {
+            key: 'raring',
+            name: 'raring (13.04)',
+          }, {
+            key: 'quantal',
+            name: 'quantal (12.10)',
+          }, {
+            key: 'precise',
+            name: 'precise (12.04)',
+          },
+          ];
+        } else if (distro === 'kali') {
+          return [{
+            key: 'kali',
+            name: 'kali',
+          }];
+        }
+        return null;
+      },
+      gen(distro, version) {
+        if (!(distro && version)) {
+          return '233';
+        }
+        let st = '';
+        if (this.distro === 'kali') {
+          st = `#/etc/apt/sources.list
+
+deb https://mirror.sdu.edu.cn/kali kali-rolling main non-free contrib
+deb-src https://mirror.sdu.edu.cn/kali kali-rolling main non-free contrib`;
+        } else if (this.distro === 'ubuntu') {
+          st = `#/etc/apt/sources.list
+
+deb http://mirror.sdu.edu.cn/ubuntu/ ${version} main restricted universe multiverse
+deb http://mirror.sdu.edu.cn/ubuntu/ ${version}-security main restricted universe multiverse
+deb http://mirror.sdu.edu.cn/ubuntu/ ${version}-updates main restricted universe multiverse
+# deb http://mirror.sdu.edu.cn/ubuntu/ ${version}-proposed main restricted universe multiverse
+# deb http://mirror.sdu.edu.cn/ubuntu/ ${version}-backports main restricted universe multiverse
+deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version} main restricted universe multiverse
+deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-security main restricted universe multiverse
+deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-updates main restricted universe multiverse
+# deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-proposed main restricted universe multiverse`;
+        } else if (this.distro === 'npm') {
+          st = `#~/.npmrc
+          
+registry=http://npmreg.mirrors.ustc.edu.cn/`;
+        }
         return st;
       },
     },
+
     data() {
       return {
-        selected: 'zesty',
+        distro: 'ubuntu',
+        version: 'artful',
       };
     },
   };
