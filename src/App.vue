@@ -1,38 +1,24 @@
 <template>
   <div id="app">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-
-        <!--<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <Sidebar></Sidebar>
-              </div>-->
-
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <Navbar></Navbar>
-          <Card></Card>
-          <mirList></mirList>
-          <confGen></confGen>
-        </div>
 
+          <Navbar></Navbar>
+          <router-view id="xxx"></router-view>
+
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  // import 'bootstrap/dist/css/bootstrap.min.css';
-  import 'bootflat/css/bootstrap.min.css';
-  import Card from './components/Card';
   import Navbar from './components/Navbar';
-  import mirList from './components/mirList';
-  import confGen from './components/confGen';
 
   export default {
     name: 'app',
     components: {
-      Card,
-      mirList,
-      confGen,
       Navbar,
     },
   };
