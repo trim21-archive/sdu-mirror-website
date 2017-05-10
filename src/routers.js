@@ -6,7 +6,7 @@ import aboutUs from './components/aboutUs';
 
 const routes = [
   {
-    path: '/index',
+    path: '/',
     name: 'index',
     component: Index,
   }, {
@@ -23,7 +23,7 @@ const routes = [
     component: aboutUs,
   }, {
     path: '*',
-    redirect: '/index',
+    redirect: '/',
   },
 ];
 
