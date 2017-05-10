@@ -22,7 +22,7 @@ const routes = [
     name: 'about',
     component: aboutUs,
   }, {
-    path: '/',
+    path: '*',
     redirect: '/index',
   },
 ];
