@@ -98,12 +98,13 @@
           return '233';
         }
         let st = '';
-        if (this.distro === 'kali') {
-          st = `#/etc/apt/sources.list
+//         if (this.distro === 'kali') {
+//           st = `#/etc/apt/sources.list
 
-deb https://mirror.sdu.edu.cn/kali kali-rolling main non-free contrib
-deb-src https://mirror.sdu.edu.cn/kali kali-rolling main non-free contrib`;
-        } else if (this.distro === 'ubuntu') {
+// deb https://mirror.sdu.edu.cn/kali kali-rolling main non-free contrib
+// deb-src https://mirror.sdu.edu.cn/kali kali-rolling main non-free contrib`;
+//         } else
+    if (this.distro === 'ubuntu') {
           st = `#/etc/apt/sources.list
 
 deb http://mirror.sdu.edu.cn/ubuntu/ ${version} main restricted universe multiverse
@@ -115,7 +116,7 @@ deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version} main restricted universe mul
 deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-security main restricted universe multiverse
 deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-updates main restricted universe multiverse
 # deb-src http://mirror.sdu.edu.cn/ubuntu/ ${version}-proposed main restricted universe multiverse`;
-        } else if (this.distro === 'npm') {
+} else if (this.distro === 'npm') {
           st = `#~/.npmrc
 
 registry=http://mirror.sdu.edu.cn/npm/`;
