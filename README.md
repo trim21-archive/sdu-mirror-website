@@ -4,7 +4,7 @@
 
 基于vue2+bootstrap
 
-demo [http://se.trim21.cn](http://se.trim21.cn)
+新的配置生成器，方便配置的相关说明的管理
 
 开发：
 ```
