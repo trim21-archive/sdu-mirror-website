@@ -15,7 +15,7 @@
             </li>
             <li>
               <!--<router-link to="/iso">安装镜像下载</router-link>-->
-              <a href="/ubuntu-releases">安装镜像</a>
+              <a href="/ubuntu-releases/">安装镜像</a>
             </li>
             <li>
               <router-link to="/about">about</router-link>
