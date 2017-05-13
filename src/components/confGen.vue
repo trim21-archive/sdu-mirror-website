@@ -47,7 +47,5 @@
 </script>
 
 <style>
-  pre {
-    text-align: start;
-  }
+
 </style>
