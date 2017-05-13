@@ -1,34 +1,40 @@
 import Index from './components/index';
 import mirList from './components/mirList';
 import confGen from './components/confGen';
-import aboutUs from './components/aboutUs';
 import ubuntu from './components/doc/ubuntu';
+import aosp from './components/doc/aosp';
+import npm from './components/doc/npm';
+import release from './components/release';
 import notfound from './components/notfound';
+import aboutUs from './components/aboutUs';
 
 const routes = [
   {
     path: '/',
-    name: 'index',
     component: Index,
   }, {
     path: '/status',
-    name: 'status',
     component: mirList,
   }, {
     path: '/confgen',
-    name: 'confgen',
     component: confGen,
     children: [
       // 当 /user/:id 匹配成功，
       // UserHome 会被渲染在 User 的 <router-view> 中
-      { path: '', component: ubuntu }],
+      { path: 'ubuntu', component: ubuntu },
+      { path: 'aosp', component: aosp },
+      { path: 'npm', component: npm },
+    ],
+  }, {
+    path: '/iso',
+    component: release,
   }, {
     path: '/about',
-    name: 'about',
+    // name: 'about',
     component: aboutUs,
   }, {
     path: '/404',
-    name: 'notfoune',
+    // name: 'notfoune',
     component: notfound,
   }, {
     path: '*',

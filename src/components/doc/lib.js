@@ -53,11 +53,14 @@ deb-src http://mirror.sdu.edu.cn/ubuntu/ ${ver}-updates main restricted universe
     key: 'precise',
     name: 'precise (12.04)',
   }],
-  doc: '替换/etc/apt/sources.list (如果你安装了docker，yarn等软件请记得保留相应的条目)',
+  doc: '<h2>替换/etc/apt/sources.list (如果你安装了docker，yarn等软件请记得保留相应的条目)<h2>',
 };
 export const npm = {
   version: 'npm',
-  doc: '加入.npmrc',
+  doc: marked(`
+#  将\`registry = https://mirror.sdu.edu.cn/npm/\`加入~/.npmrc
+## 或者
+# 使用命令行参数 \`npm --registry https://mirror.sdu.edu.cn/npm/ \` `),
 };
 export const aosp = {
   version: 'aosp',
@@ -65,10 +68,10 @@ export const aosp = {
     `# AOSP镜像使用帮助
 >该镜像上游是[清华大学开源镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/)，每天凌晨三点进行代码同步。
 
-###简洁说明
+### 简洁说明
 可以参考官方的使用教程[](https://source.android.com/source/downloading.html)。使用\`git://mirror.sdu.edu.cn/\` 替换 \`https://android.googlesource.com/\` 即可。
 
-###具体说明（新开始）
+### 具体说明（新开始）
 （参考[https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/](https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/)编写）
 
 1. 下载repo工具

@@ -4,6 +4,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <!--<a class="btn btn-default" href="#" role="button">Link</a>-->
+          <!--<button class="btn btn-default" type="submit">Button</button>-->
+          <!--<input class="btn btn-default" type="button" value="Input">-->
+          <!--<input class="btn btn-default" type="submit" value="Submit">-->
+          <router-link to="/confgen/ubuntu" class='btn btn-default'>Ubuntu</router-link>
+          <router-link to="/confgen/aosp" class='btn btn-default'>AOSP</router-link>
+          <router-link to="/confgen/npm" class='btn btn-default'>npm</router-link>
           <router-view></router-view>
         </div>
       </div>
@@ -39,7 +46,7 @@
 
 </script>
 
-<style scoped>
+<style>
   pre {
     text-align: start;
   }

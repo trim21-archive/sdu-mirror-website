@@ -10,7 +10,7 @@ Vue.use(VueResource);
 
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',1
   routes, // （缩写）相当于 routes: routes
 });
 

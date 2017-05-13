@@ -14,8 +14,8 @@
               <router-link to="/confgen">使用说明</router-link>
             </li>
             <li>
-              <!--<router-link to="/iso">安装镜像下载</router-link>-->
-              <a href="/ubuntu-releases/">安装镜像</a>
+              <router-link to="/iso">安装镜像下载</router-link>
+              <!--<a href="/ubuntu-releases/">安装镜像</a>-->
             </li>
             <li>
               <router-link to="/about">about</router-link>
