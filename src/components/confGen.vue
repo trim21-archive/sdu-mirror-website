@@ -12,10 +12,25 @@
 </template>
 
 <script>
+  /* eslint-disable no-unused-vars */
+  const marked = require('marked');
+
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    gfm: true,
+    tables: true,
+    breaks: true,
+    pedantic: true,
+    sanitize: true,
+    smartLists: true,
+    smartypants: true,
+  });
+
   export default {
     name: 'confGen',
     data() {
       return {
+        distroList: ['npm', 'ubuntu'],
         distro: 'ubuntu',
         version: 'artful',
       };

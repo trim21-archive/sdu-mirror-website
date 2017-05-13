@@ -1,9 +1,9 @@
 import Index from './components/index';
-// import Navbar from './components/Navbar';
 import mirList from './components/mirList';
 import confGen from './components/confGen';
 import aboutUs from './components/aboutUs';
 import ubuntu from './components/doc/ubuntu';
+import notfound from './components/notfound';
 
 const routes = [
   {
@@ -27,8 +27,12 @@ const routes = [
     name: 'about',
     component: aboutUs,
   }, {
+    path: '/404',
+    name: 'notfoune',
+    component: notfound,
+  }, {
     path: '*',
-    redirect: '/',
+    redirect: '/404',
   },
 ];
 
