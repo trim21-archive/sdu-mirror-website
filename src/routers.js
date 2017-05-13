@@ -3,6 +3,7 @@ import Index from './components/index';
 import mirList from './components/mirList';
 import confGen from './components/confGen';
 import aboutUs from './components/aboutUs';
+import notfound from './components/notfound';
 
 const routes = [
   {
@@ -22,8 +23,11 @@ const routes = [
     name: 'about',
     component: aboutUs,
   }, {
+    path: '/404',
+    component: notfound,
+  }, {
     path: '*',
-    redirect: '/',
+    redirect: '/404',
   },
 ];
 
