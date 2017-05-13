@@ -11,7 +11,7 @@
             <!--<router-link to="/status">镜像列表</router-link>-->
             <!--</li>-->
             <li>
-              <router-link to="/confgen">配置生成器</router-link>
+              <router-link to="/confgen">使用说明</router-link>
             </li>
             <li>
               <!--<router-link to="/iso">安装镜像下载</router-link>-->

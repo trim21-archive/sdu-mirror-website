@@ -3,7 +3,7 @@ import marked from 'marked';
 export default {
   version: ['aosp'],
   doc: marked(
-    `# AOSP镜像使用帮助
+                `# AOSP镜像使用帮助
 >该镜像上游是[清华大学开源镜像站](https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/)，每天凌晨三点进行代码同步。
 
 ###简洁说明

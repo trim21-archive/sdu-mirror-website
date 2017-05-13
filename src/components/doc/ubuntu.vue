@@ -17,7 +17,6 @@
         </div>
 
       </div>
-
     </div>
   </div>
 </template>
@@ -28,20 +27,7 @@
   export default {
     name: 'ubuntu',
     methods: {
-      gen(ver) {
-        const st = `#/etc/apt/sources.list
-
-deb http://mirror.sdu.edu.cn/ubuntu/ ${ver} main restricted universe multiverse
-deb http://mirror.sdu.edu.cn/ubuntu/ ${ver}-security main restricted universe multiverse
-deb http://mirror.sdu.edu.cn/ubuntu/ ${ver}-updates main restricted universe multiverse
-# deb http://mirror.sdu.edu.cn/ubuntu/ ${ver}-proposed main restricted universe multiverse
-# deb http://mirror.sdu.edu.cn/ubuntu/ ${ver}-backports main restricted universe multiverse
-deb-src http://mirror.sdu.edu.cn/ubuntu/ ${ver} main restricted universe multiverse
-deb-src http://mirror.sdu.edu.cn/ubuntu/ ${ver}-security main restricted universe multiverse
-deb-src http://mirror.sdu.edu.cn/ubuntu/ ${ver}-updates main restricted universe multiverse
-# deb-src http://mirror.sdu.edu.cn/ubuntu/ ${ver}-proposed main restricted universe multiverse`;
-        return st;
-      },
+      gen: ubuntu.gen,
     },
     data() {
       return {
@@ -55,5 +41,7 @@ deb-src http://mirror.sdu.edu.cn/ubuntu/ ${ver}-updates main restricted universe
 </script>
 
 <style scoped>
-
+  pre {
+    text-align: start;
+  }
 </style>
