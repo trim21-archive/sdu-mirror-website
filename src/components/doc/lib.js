@@ -101,7 +101,7 @@ export const aosp = {
     
         repo sync
         
-###具体说明（替换已有源码的remote）
+### 具体说明（替换已有源码的remote）
 1. 修改\`.repo/manifest.xml\`,将\`name\`为\`aosp\`的\`remote\`中\`fetch\`的值修改为\`..\`
 2. 修改\`.repo/manifests.git/config\`,将\`url\`修改为\`url=git://mirror.sdu.edu.cn/platform/manifest\`
 `),
