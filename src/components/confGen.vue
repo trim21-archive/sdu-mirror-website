@@ -25,8 +25,8 @@
     <pre>{{ gen(distro,version) }}</pre>
     <h2>使用说明</h2>
     <div></div>
-    <!--<h3>{{user(distro)}}</h3>-->
-    <div v-html="marked(user(distro))"></div>
+    <h3>{{user(distro)}}</h3>
+    <!--<div v-html="marked(user(distro))"></div>-->
 
   </div>
 </template>

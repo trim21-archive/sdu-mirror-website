@@ -1,5 +1,4 @@
 import Index from './components/index';
-// import Navbar from './components/Navbar';
 import mirList from './components/mirList';
 import confGen from './components/confGen';
 import aboutUs from './components/aboutUs';
@@ -24,6 +23,7 @@ const routes = [
     component: aboutUs,
   }, {
     path: '/404',
+    name: 'notfoune',
     component: notfound,
   }, {
     path: '*',
