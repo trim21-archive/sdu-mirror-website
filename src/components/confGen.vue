@@ -195,7 +195,7 @@ registry=https://mirror.sdu.edu.cn/npm/`;
 
     data() {
       return {
-        distroList: ['npm', 'ubuntu'],//, 'aosp'],
+        distroList: ['npm', 'ubuntu'],
         distro: 'ubuntu',
         version: 'artful',
       };
