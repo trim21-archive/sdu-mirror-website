@@ -1,10 +1,9 @@
 山东大学开源镜像站首页
 
-[https://mirror.sdu.edu.cn](https://mirror.sdu.edu.cn)(尚未部署)
+[https://mirror.sdu.edu.cn](https://mirror.sdu.edu.cn)
 
 基于vue2+bootstrap
 
-demo [http://se.trim21.cn](http://se.trim21.cn)
 
 开发：
 ```
@@ -17,3 +16,9 @@ npm i
 npm run dev
 ```
 山大网络安全俱乐部
+
+todo:
+
+- http改为https
+
+- 联系方式

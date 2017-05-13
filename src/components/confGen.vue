@@ -16,7 +16,7 @@
         <div v-if="getVersionOfDistro(distro).length>1" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
           <select v-model="version" class="form-control">
             <option v-if="getVersionOfDistro(distro)" v-for="item in getVersionOfDistro(distro)" :value="item.key">{{item.name}}</option>
-            </select>
+          </select>
         </div>
 
       </div>
@@ -27,7 +27,7 @@
     <div></div>
     <!--<h3>{{user(distro)}}</h3>-->
     <div v-html="marked(user(distro))"></div>
-    
+
   </div>
 </template>
 
