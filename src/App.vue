@@ -5,7 +5,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
           <Navbar></Navbar>
-          <router-view id="xxx"></router-view>
+          <router-view></router-view>
 
         </div>
       </div>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import Navbar from './components/Navbar';
+  import Navbar from 'components/Navbar';
 
   export default {
     name: 'app',

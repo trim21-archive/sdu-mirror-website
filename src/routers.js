@@ -1,12 +1,12 @@
-import Index from './components/index';
-import mirList from './components/mirList';
-import confGen from './components/confGen';
-import ubuntu from './components/doc/ubuntu';
-import aosp from './components/doc/aosp';
-import npm from './components/doc/npm';
-import release from './components/release';
-import notfound from './components/notfound';
-import aboutUs from './components/aboutUs';
+import Index from 'components/index';
+import mirList from 'components/mirList';
+import confGen from 'components/confGen';
+import ubuntu from 'components/doc/ubuntu';
+import aosp from 'components/doc/aosp';
+import npm from 'components/doc/npm';
+import release from 'components/release';
+import notfound from 'components/notfound';
+import aboutUs from 'components/aboutUs';
 
 const routes = [
   {

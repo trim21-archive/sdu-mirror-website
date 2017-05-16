@@ -41,5 +41,7 @@
 </script>
 
 <style scoped>
-
+  pre {
+    text-align: start;
+  }
 </style>
