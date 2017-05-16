@@ -1,8 +1,8 @@
-import Index from './components/index';
-import mirList from './components/mirList';
-import confGen from './components/confGen';
-import aboutUs from './components/aboutUs';
-import notfound from './components/notfound';
+import Index from 'components/index';
+import mirList from 'components/mirList';
+import confGen from 'components/confGen';
+import aboutUs from 'components/aboutUs';
+import notfound from 'components/notfound';
 
 const routes = [
   {
